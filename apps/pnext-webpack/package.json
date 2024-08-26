@@ -19,11 +19,11 @@
   "scripts": {
     "start": "webpack --mode development --watch --progress",
     "dev": "webpack-dev-server --config webpack.config.example.js --mode development --progress",
-    "build": "npm run clean && npm run lint && webpack --mode production --progress --config webpack.config.prod.js",
+    "build": "npm run lint && webpack --mode production --progress --config webpack.config.prod.js",
     "lint": "tslint --project tsconfig.json",
     "prettier": "prettier --write \"**/*.js\" \"**/*.jsx\" \"**/*.tsx\" \"**/*.ts\"",
     "prepare-release": "standard-version",
-    "clean": "rm -rf node_modules && rm -rf public/build && rm public/main.js && rm -rf .turbo"
+    "clean": "rm -rf node_modules && rm -rf .turbo"
   },
   "dependencies": {},
   "peerDependencies": {

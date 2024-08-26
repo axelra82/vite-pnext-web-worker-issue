@@ -261,6 +261,7 @@ export class PointCloudMaterial extends RawShaderMaterial {
   @uniform('maxSize') maxSize!: number;
   @uniform('minSize') minSize!: number;
   @uniform('octreeSize') octreeSize!: number;
+  // @ts-ignore
   @uniform('opacity', true) opacity!: number;
   @uniform('rgbBrightness', true) rgbBrightness!: number;
   @uniform('rgbContrast', true) rgbContrast!: number;
@@ -380,7 +381,9 @@ export class PointCloudMaterial extends RawShaderMaterial {
   }
 
   updateShaderSource(): void {
+    // @ts-ignore
     this.vertexShader = this.applyDefines(require('./shaders/pointcloud.vert').default);
+    // @ts-ignore
     this.fragmentShader = this.applyDefines(require('./shaders/pointcloud.frag').default);
 
     if (this.opacity === 1.0) {

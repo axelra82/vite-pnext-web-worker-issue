@@ -1,6 +1,16 @@
-# Vite web worker bundling issue
+**NOTE** Not a Vite problem!
+
+See [solved issue](https://github.com/vitejs/vite/issues/17950) for reference.
+
+In summary, this issue is related to the TS config key `useDefineForClassFields` which is default `true` if `compilerOptions.target` is >= `"es2022"`.
 
 When running [PNext three loader](https://github.com/pnext/three-loader/tree/master) in a Vite bundled app there are issues with the web worker. Specifically the `adaptive` point type is not updated in the render loop, thus creating a `fixed` point type since the shader is not getting proper data.
+
+---
+
+ORIGINAL
+
+# ~~Vite web worker bundling issue~~
 
 ## Steps
 
